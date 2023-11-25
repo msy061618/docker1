@@ -18,10 +18,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "12345678"
       MYSQL_DATABASE: "demodb"
-    volumes:
-      
-      - ./php_crud/DatabaseFile/:/docker-entrypoint-initdb.d/php_crud.sql
-  
+    volumes:      
+      - ./DatabaseFile/:/docker-entrypoint-initdb.d/php_crud.sql  
   phpadmin:
     image: phpmyadmin:latest
     ports:
