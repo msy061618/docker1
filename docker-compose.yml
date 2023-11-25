@@ -19,7 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: "12345678"
       MYSQL_DATABASE: "demodb"
     volumes:      
-      - ./DatabaseFile/:/docker-entrypoint-initdb.d/php_crud.sql  
+      - ./DatabaseFile:/docker-entrypoint-initdb.d
   phpadmin:
     image: phpmyadmin:latest
     ports:

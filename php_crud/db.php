@@ -1,6 +1,6 @@
 <?php
 //server with default setting (user 'root' with no password)
-$host = '192.168.153.57';  // server 
+$host = '192.168.1.17';  // server 
 $user = 'root';   
 $pass = "12345678";   
 $database = 'demodb';   //Database Name  
