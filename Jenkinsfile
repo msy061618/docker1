@@ -10,4 +10,12 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            // Clean up after the build
+            script {
+                sh 'docker-compose down'
+            }
+        }
+    }
 }
