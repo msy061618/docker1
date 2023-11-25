@@ -20,7 +20,7 @@ services:
       MYSQL_DATABASE: "demodb"
     volumes:
       
-      - ./php_crud/php_crud/DatabaseFile/:/docker-entrypoint-initdb.d/php_crud.sql
+      - ./php_crud/DatabaseFile/:/docker-entrypoint-initdb.d/php_crud.sql
   
   phpadmin:
     image: phpmyadmin:latest
