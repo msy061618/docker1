@@ -19,10 +19,10 @@ pipeline {
                 sh 'docker ps -a'
             }
         }
-        
+
         stage('Kill all container'){
             steps {
-                sh 'docker stop $(docker ps -a -q) --wait'
+                sh 'docker stop $(docker ps -a -q)'
                 sh 'docker rm $(docker ps -a -q)'
             }
         }
