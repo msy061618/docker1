@@ -13,6 +13,19 @@ pipeline {
                     '''                
             }
         }
+        stage('Check container is running or not'){
+            steps {
+                sh 'docker ps'
+                sh 'docker ps -a'
+            }
+        }
+        
+        stage('Kill all container'){
+            steps {
+                sh 'docker stop $(docker ps -a -q) --wait'
+                sh 'docker rm $(docker ps -a -q)'
+            }
+        }
 
         stage('starting container'){
             steps{
