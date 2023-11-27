@@ -20,30 +20,6 @@ pipeline {
                 sh 'docker ps -a'
             }
         }
-
-        stage('Identify and Stop Container') {
-            steps {
-                script {
-                    // Get a list of all running containers
-                    def runningContainers = sh(script: "docker ps --format '{{.Names}}'", returnStdout: true).trim()
-
-                    // Check if there are any running containers
-                    if (runningContainers) {
-                        // Assume the first running container is the one you are looking for
-                        def targetContainer = runningContainers.tokenize('\n')[0].trim()
-
-                        echo "Found a running container: ${targetContainer}"
-
-                        // Stop the identified container
-                        echo "Stopping the container..."
-                        sh "docker stop ${targetContainer}"
-                    } else {
-                        echo "No running containers found. Skipping stop command."
-                    }
-                }
-            }
-        }
-
         stage('starting container'){
             steps{
                 sh 'docker compose up -d --no-color --wait'
