@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent devopstest
 
     stages {
         stage('Verify installation') {
