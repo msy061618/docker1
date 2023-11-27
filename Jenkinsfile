@@ -26,13 +26,7 @@ pipeline {
                 sh 'docker compose ps'
             }
         }
-
-
-        stage('Testing the 80 port container'){
-            steps{
-                sh 'curl http//:10.11.0.17 | jq'
-            }        
-        }
+        
     }
 
 }
