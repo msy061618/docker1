@@ -1,8 +1,9 @@
 pipeline {
     agent {
-        labels 'dev'
+        docker {
+            image 'your-docker-image:tag'
+        }
     }
-
     stages {
         stage('Verify installation') {
             steps {                
