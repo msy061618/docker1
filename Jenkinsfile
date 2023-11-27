@@ -1,5 +1,7 @@
 pipeline {
-    agent {devopstest}
+    node {
+        label 'devopstest'
+    }
 
     stages {
         stage('Verify installation') {
