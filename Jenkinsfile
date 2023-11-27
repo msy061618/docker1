@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker 'devopstest'
+        labels 'dev'
     }
 
     stages {
